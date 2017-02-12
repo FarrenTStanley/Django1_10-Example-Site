@@ -1,0 +1,29 @@
+    {% extends 'layout.html' %}
+    {% load static %}
+    {% block title %}Blog{% endblock %}
+    {% block content %}
+        <style>
+            a:link {color:white;}
+            a:hover {color:black;}
+        </style>
+        <section class="bg-primary" id="about">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2 text-center">
+                        <h2 class="section-heading">Blog</h2>
+                        <hr class="light">
+
+                        {% for blog in blogs %}
+                            <a href="/blog/{{ blog.id }}/" />
+                                <div>
+                                    <p>{{ blog.title }}</p>
+                                    <img src="{{ blog.image }}" width="150" height="150" />
+                                </div>
+                            </a>
+                        {% endfor %%}
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    {% endblock %}
